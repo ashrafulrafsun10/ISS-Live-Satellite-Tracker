@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Exo 2',sans-serif;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    color:#fff;
+
+    background:
+    radial-gradient(circle at top,#4f1d95 0%,transparent 25%),
+    radial-gradient(circle at bottom right,#00e5ff22 0%,transparent 30%),
+    linear-gradient(180deg,#01030a,#050a18,#000000);
+
+}
+
+/* ================= STAR BACKGROUND ================= */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-3;
+
+    background-image:
+
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(cyan .8px,transparent .8px);
+
+    background-size:
+    45px 45px,
+    90px 90px;
+
+    opacity:.28;
+
+    animation:moveStars 120s linear infinite;
+
+}
+
+@keyframes moveStars{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-1200px);
+
+    }
+
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+
+    width:92%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:40px 0;
+
+}
+
+/* ================= HEADER ================= */
+
+header{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+header h1{
+
+    font-size:58px;
+
+    color:#7efcff;
+
+    text-shadow:
+
+    0 0 20px cyan,
+    0 0 40px cyan,
+    0 0 70px rgba(0,255,255,.5);
+
+}
+
+header p{
+
+    margin-top:10px;
+
+    color:#d8faff;
+
+    font-size:18px;
+
+    opacity:.8;
+
+}
+
+/* ================= LIVE STATUS ================= */
+
+.live-status{
+
+    width:340px;
+
+    margin:25px auto 35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px 25px;
+
+    border-radius:50px;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(0,255,255,.25);
+
+    box-shadow:0 0 25px rgba(0,255,255,.15);
+
+}
+
+.live-dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#00ff88;
+
+    box-shadow:0 0 18px #00ff88;
+
+    animation:pulse 1s infinite;
+
+}
+
+.live-text{
+
+    color:#66FCF1;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+#updateTime{
+
+    color:#fff;
+
+    opacity:.7;
+
+    font-size:13px;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.6);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ================= GLASS CARD ================= */
+
+.glass-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(28px);
+
+    background:
+
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(0,255,255,.18);
+
+    border-radius:30px;
+
+    padding:35px;
+
+    box-shadow:
+
+    0 0 60px rgba(0,255,255,.08),
+
+    0 25px 70px rgba(0,0,0,.65);
+
+}
+
+.glass-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-150%;
+
+    background:
+
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent
+    );
+
+    transform:rotate(25deg);
+
+    animation:shine 8s linear infinite;
+
+}
+
+@keyframes shine{
+
+    from{
+
+        transform:translateX(-100%) rotate(25deg);
+
+    }
+
+    to{
+
+        transform:translateX(100%) rotate(25deg);
+
+    }
+
+}
+/* ================= INFO GRID ================= */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    margin-bottom:30px;
+
+}
+
+.info-box{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(0,255,255,.15);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    text-align:center;
+
+    transition:.35s ease;
+
+    cursor:default;
+
+}
+
+.info-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        transparent,
+        rgba(0,255,255,.08),
+        transparent
+    );
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.info-box:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#00ffff;
+
+    box-shadow:0 0 35px rgba(0,255,255,.25);
+
+}
+
+.info-box:hover::before{
+
+    opacity:1;
+
+}
+
+.info-box h3{
+
+    color:#8fdfff;
+
+    font-size:15px;
+
+    margin-bottom:12px;
+
+    font-weight:500;
+
+}
+
+.info-box h2{
+
+    font-size:30px;
+
+    color:white;
+
+}
+
+/* ================= MAP ================= */
+
+#map{
+
+    width:100%;
+
+    height:560px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:2px solid rgba(0,255,255,.18);
+
+    box-shadow:
+        0 0 40px rgba(0,255,255,.12),
+        inset 0 0 30px rgba(255,255,255,.03);
+
+    margin-top:20px;
+
+}
+
+/* ================= LOCATION CARD ================= */
+
+.location-card{
+
+    margin-top:30px;
+
+    padding:28px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(0,255,255,.18);
+
+    transition:.35s;
+
+}
+
+.location-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 30px rgba(0,255,255,.25);
+
+}
+
+.location-card h3{
+
+    color:#66FCF1;
+
+    font-size:18px;
+
+    margin-bottom:10px;
+
+}
+
+.location-card h2{
+
+    font-size:32px;
+
+    color:#ffffff;
+
+    margin-bottom:10px;
+
+}
+
+.location-card p{
+
+    color:#d6d6d6;
+
+    line-height:1.6;
+
+}
+
+/* ================= CREDIT ================= */
+
+.credit{
+
+    margin-top:35px;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+    text-align:center;
+
+}
+
+.credit h3{
+
+    color:#8fdfff;
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+.credit h2{
+
+    color:white;
+
+    font-size:28px;
+
+    letter-spacing:1px;
+
+}
+
+.credit p{
+
+    margin-top:10px;
+
+    color:rgba(255,255,255,.65);
+
+}

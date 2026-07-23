@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ISS Live Satellite Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<link
+rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"
+/>
+
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+    <header>
+
+        <h1>🛰 ISS Live Satellite Tracker</h1>
+
+        <p>Real-Time International Space Station Monitoring</p>
+
+    </header>
+<div class="live-status">
+
+    <span class="live-dot"></span>
+
+    <span class="live-text">LIVE TRACKING</span>
+
+    <span id="updateTime">Updating...</span>
+
+</div>
+    <div class="glass-card">
+
+        <div class="info-grid">
+
+            <div class="info-box">
+
+                <h3>Latitude</h3>
+
+                <h2 id="latitude">--</h2>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Longitude</h3>
+
+                <h2 id="longitude">--</h2>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Altitude</h3>
+
+                <h2 id="altitude">-- km</h2>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Velocity</h3>
+
+                <h2 id="velocity">-- km/h</h2>
+
+            </div>
+
+        </div>
+
+        <div id="map"></div>
+<div class="location-card">
+
+    <h3>📍 Current Position</h3>
+
+    <h2 id="country">Loading...</h2>
+
+    <p id="region"></p>
+
+</div>
+        <div class="credit">
+
+            <h3>Designed & Developed by</h3>
+
+            <h2>ASHRAFUL FERDOUS RAFSUN</h2>
+
+            <p>© 2026 All Rights Reserved</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
